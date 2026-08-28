@@ -10,11 +10,13 @@ dados = pd.read_csv(
 
 dados = dados.drop(["Student_ID","Age","Department"], axis=1)
 
-# print(dados.head())
 media = dados.groupby("Depression")["Social_Media_Hours"].mean()
+media.index = ["Sem depressão", "Com depressão"]
 st.subheader("Social Media x Depression")
 fig, ax = plt.subplots()
 media.plot.bar(ax=ax)
+ax.set_title("Média de uso de redes sociais")
+ax.set_ylabel("Horas")
 st.pyplot(fig)
 
 sem_depressão = dados[dados["Depression"] == False]
