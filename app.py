@@ -30,7 +30,7 @@ st.subheader("Distribuição de estudantes por depressão")
 
 fig, ax = plt.subplots()
 
-total = quantidade.subplots()
+total = quantidade.sum()
 
 ax.pie(
     quantidade,
