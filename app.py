@@ -30,10 +30,12 @@ st.subheader("Distribuição de estudantes por depressão")
 
 fig, ax = plt.subplots()
 
+total = quantidade.subplots()
+
 ax.pie(
     quantidade,
     labels=quantidade.index,
-    autopct="%1.1f%%"
+    autopct=lambda pct: f"{pct:.1f}%\n({int(pct * total / 100):,})"
 )
 
 st.pyplot(fig)
