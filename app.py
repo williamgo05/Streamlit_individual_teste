@@ -9,7 +9,7 @@ dados = pd.read_csv(
 )
 
 dados = dados.drop(["Student_ID","Age","Department"], axis=1)
-
+dados.__len__
 media = dados.groupby("Depression")["Social_Media_Hours"].mean()
 media.index = ["Sem depressão", "Com depressão"]
 st.subheader("Social Media x Depression")
@@ -22,6 +22,21 @@ st.pyplot(fig)
 sem_depressão = dados[dados["Depression"] == False]
 com_depressão = dados[dados["Depression"] == True]
 
-print(sem_depressão["Social_Media_Hours"].median())
-print(com_depressão["Social_Media_Hours"].median())
+st.write("Sem depressão:", sem_depressão)
+st.write("Com depressão:", com_depressão)
 
+quantidade = dados["Depression"].value_counts()
+
+quantidade.index = ["Sem depressão", "Com depressão"]
+
+st.subheader("Distribuição de estudantes por depressão")
+
+fig, ax = plt.subplots()
+
+ax.pie(
+    quantidade,
+    labels=quantidade.index,
+    autopct="%1.1f%%"
+)
+
+st.pyplot(fig)
