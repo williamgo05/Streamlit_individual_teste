@@ -25,7 +25,7 @@ col1, col2 = st.columns(2)
 
 with col1:
 	st.subheader("Distribuição de estudantes por depressão")
-	fig, ax = plt.subplots(figsize=(10, 7))
+	fig, ax = plt.subplots(figsize=(8, 6))
 	total = quantidade.sum()
 
 	ax.pie(
@@ -41,7 +41,7 @@ media.index = ["Sem depressão", "Com depressão"]
 
 with col2:
 	st.subheader("Social Media x Depression")
-	fig, ax = plt.subplots(figsize=(10, 7))
+	fig, ax = plt.subplots(figsize=(8, 6))
 	media.plot.bar(ax=ax)
 	ax.bar_label(
         ax.containers[0],
