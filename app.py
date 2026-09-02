@@ -42,7 +42,12 @@ media.index = ["Sem depressão", "Com depressão"]
 with col2:
 	st.subheader("Social Media x Depression")
 	fig, ax = plt.subplots(figsize=(8, 6))
-	media.plot.bar(ax=ax, color=["#1f77b4", "#ff7f0e"])
+
+	media.plot.bar(
+		ax=ax,
+		color=["#1f77b4", "#ff7f0e"]
+	)
+
 	ax.bar_label(
         ax.containers[0],
         labels=[f"{valor:.2f} h" for valor in media],
