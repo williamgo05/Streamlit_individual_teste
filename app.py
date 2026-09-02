@@ -71,7 +71,10 @@ with col2:
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         font_color="white",
-        title="Média de uso de redes sociais",
+        title=dict(
+            text="Média de uso de redes sociais",
+            x=0.5
+        ),
         yaxis_title="Horas",
         xaxis_title="",
         showlegend=False,
