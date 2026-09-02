@@ -51,6 +51,10 @@ with col2:
 		color=["#1f77b4", "#ff7f0e"]
 	)
 
+	ax.tick_params(axis="both", colors="white")
+	ax.set_ylabel("Horas", color="white")
+	ax.set_title("Média de uso de redes sociais", color="white")
+
 	ax.bar_label(
         ax.containers[0],
         labels=[f"{valor:.2f} h" for valor in media],
