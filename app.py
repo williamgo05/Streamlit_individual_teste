@@ -43,6 +43,9 @@ with col2:
 	st.subheader("Social Media x Depression")
 	fig, ax = plt.subplots(figsize=(8, 6))
 
+	fig.patch.set_alpha(0)
+	ax.patch.set_alpha(0)
+
 	media.plot.bar(
 		ax=ax,
 		color=["#1f77b4", "#ff7f0e"]
