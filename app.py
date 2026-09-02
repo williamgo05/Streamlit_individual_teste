@@ -2,17 +2,17 @@
 
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.set_page_config(layout="wide")
 
 df = pd.read_csv(
     "student_lifestyle_100k.csv",
-	sep=",",
-	encoding="utf-8-sig"
+    sep=",",
+    encoding="utf-8-sig"
 )
 
-df = df.drop(["Student_ID","Age","Department"], axis=1)
+df = df.drop(["Student_ID", "Age", "Department"], axis=1)
 
 #Default
 
