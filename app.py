@@ -26,12 +26,18 @@ col1, col2 = st.columns(2)
 with col1:
 	st.subheader("Distribuição de estudantes por depressão")
 	fig, ax = plt.subplots(figsize=(8, 6))
+
+	fig.patch.set_alpha(0)
+	ax.patch.set_alpha(0)
+	ax.tick_params(axis="both", colors="white")
+
 	total = quantidade.sum()
 
 	ax.pie(
 		quantidade,
 		labels=quantidade.index,
-		autopct=lambda pct: f"{pct:.1f}%\n({int(pct * total / 100):,})"
+		autopct=lambda pct: f"{pct:.1f}%\n({int(pct * total / 100):,})",
+		textprops={"color": "white"}
 	)
 
 	st.pyplot(fig)
