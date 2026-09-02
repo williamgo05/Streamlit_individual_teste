@@ -59,7 +59,7 @@ with col2:
         ax.containers[0],
         labels=[f"{valor:.2f} h" for valor in media],
         padding=3,
-		fontsize=14
+		fontsize=14,
 		color="white"
     )
 
