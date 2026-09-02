@@ -33,13 +33,19 @@ with col1:
 
     fig.update_traces(
         texttemplate="%{percent:.1%}<br>(%{value:,})",
-        textfont_color="white"
+        textfont_color="white",
+        showlegend=True
     )
 
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        font_color="white"
+        font_color="white",
+        legend=dict(
+            orientation="v",
+            x=1,
+            y=0.5
+        )
     )
 
     st.plotly_chart(fig, use_container_width=True)
@@ -61,7 +67,8 @@ with col2:
 
     fig.update_traces(
         textfont_color="white",
-        textposition="outside"
+        textposition="outside",
+        width=0.55
     )
 
     fig.update_layout(
@@ -70,6 +77,7 @@ with col2:
         font_color="white",
         yaxis_title="Horas",
         xaxis_title="",
+        showlegend=True,
         yaxis_range=[0, 4]
     )
 
