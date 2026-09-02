@@ -32,20 +32,16 @@ with col1:
     )
 
     fig.update_traces(
-        texttemplate="%{percent:.1%}<br>(%{value:,})",
+        texttemplate="%{label}<br>%{percent:.1%}<br>(%{value:,})",
         textfont_color="white",
-        showlegend=True
+        textposition="outside",
+        showlegend=False
     )
 
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        font_color="white",
-        legend=dict(
-            orientation="v",
-            x=1,
-            y=0.5
-        )
+        font_color="white"
     )
 
     st.plotly_chart(fig, use_container_width=True)
@@ -75,9 +71,10 @@ with col2:
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         font_color="white",
+        title="Média de uso de redes sociais",
         yaxis_title="Horas",
         xaxis_title="",
-        showlegend=True,
+        showlegend=False,
         yaxis_range=[0, 4]
     )
 
