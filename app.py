@@ -1,4 +1,4 @@
-#Default
+# Default
 
 import pandas as pd
 import streamlit as st
@@ -14,7 +14,7 @@ df = pd.read_csv(
 
 df = df.drop(["Student_ID", "Age", "Department"], axis=1)
 
-#Default
+# Default
 
 quantidade = df["Depression"].value_counts()
 quantidade.index = ["Sem depressão", "Com depressão"]
@@ -24,11 +24,11 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader("Distribuição de estudantes por depressão")
 
-    total = quantidade.sum()
-
     fig = px.pie(
         values=quantidade,
-        names=quantidade.index
+        names=quantidade.index,
+        color=quantidade.index,
+        color_discrete_sequence=["#1f77b4", "#ff7f0e"]
     )
 
     fig.update_traces(
@@ -70,7 +70,6 @@ with col2:
         font_color="white",
         yaxis_title="Horas",
         xaxis_title="",
-        showlegend=False,
         yaxis_range=[0, 4]
     )
 
