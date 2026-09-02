@@ -60,6 +60,7 @@ with col2:
         labels=[f"{valor:.2f} h" for valor in media],
         padding=3,
 		fontsize=14
+		color="white"
     )
 
 	ax.set_title("Média de uso de redes sociais")
