@@ -33,15 +33,13 @@ with col1:
 
     fig.update_traces(
         texttemplate="%{label}<br>%{percent:.1%}<br>(%{value:,})",
-        textfont=dict(color="white"),
         textposition="outside",
         showlegend=False
     )
 
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)",
-        font_color="white"
+        plot_bgcolor="rgba(0,0,0,0)"
     )
 
     st.plotly_chart(fig, use_container_width=True)
@@ -63,14 +61,12 @@ with col2:
 
     fig.update_traces(
         textposition="outside",
-        textfont=dict(color="white"),
         width=0.55
     )
 
     fig.update_layout(
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        font_color="white",
         title=dict(
             text="Média de uso de redes sociais",
             x=0.5
