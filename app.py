@@ -33,7 +33,7 @@ with col1:
 
     fig.update_traces(
         texttemplate="%{label}<br>%{percent:.1%}<br>(%{value:,})",
-        textfont_color="white",
+        textfont=dict(color="white"),
         textposition="outside",
         showlegend=False
     )
@@ -62,8 +62,8 @@ with col2:
     )
 
     fig.update_traces(
-        textfont_color="white",
         textposition="outside",
+        textfont=dict(color="white"),
         width=0.55
     )
 
